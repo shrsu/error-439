@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+public class SkylineProblem {
     public List<List<Integer>> getSkyline(int[][] buildings) {
         List<List<Integer>> result = new ArrayList<>();
         List<int[]> events = new ArrayList<>();

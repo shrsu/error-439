@@ -1,4 +1,4 @@
-public class Algorithm {
+public class KaratsubaAlgorithm {
 
     // Main karatsuba function
     public static long karatsuba(long x, long y) {

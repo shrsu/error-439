@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class AlgorithmV2 {
+public class KaratsubaAlgorithmV2 {
 
     // Karatsuba algorithm for BigInteger
     public static BigInteger karatsuba(BigInteger x, BigInteger y) {
