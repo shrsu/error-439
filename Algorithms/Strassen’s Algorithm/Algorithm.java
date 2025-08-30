@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class StrassensAlgorithm {
+public class Algorithm {
 
     // Tune this. 64 is a good starting point.
     private static final int CUTOFF = 64;

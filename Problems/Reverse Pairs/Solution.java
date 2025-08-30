@@ -1,4 +1,4 @@
-public class ReversePairs {
+public class Solution {
     public int reversePairs(int[] nums) {
         // Call merge sort helper to count reverse pairs in the full array
         return mergeSort(nums, 0, nums.length - 1);

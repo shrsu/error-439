@@ -1,4 +1,4 @@
-public class MergeSort {
+public class Algorithm {
 
     // Function to merge two subarrays
     public static void merge(int[] arr, int left, int mid, int right) {

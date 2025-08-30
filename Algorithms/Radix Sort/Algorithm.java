@@ -1,4 +1,4 @@
-public class RadixSort {
+public class Algorithm {
 
     // Function to get maximum value in the array
     private static int getMax(int[] arr) {

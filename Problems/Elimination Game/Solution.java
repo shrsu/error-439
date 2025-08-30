@@ -1,4 +1,4 @@
-public class EliminationGame {
+public class Solution {
     public static int lastRemaining(int n) {
         boolean left = true; // elimination starts from left
         int head = 1; // first element of sequence

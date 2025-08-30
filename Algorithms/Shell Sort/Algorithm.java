@@ -1,4 +1,4 @@
-public class ShellSort {
+public class Algorithm {
 
     // Shell Sort implementation
     public static void shellSort(int[] arr) {

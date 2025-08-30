@@ -1,4 +1,4 @@
-public class BubbleSort {
+public class Algorithm {
 
     // Bubble sort function
     public static void bubbleSort(int[] arr) {

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BucketSort {
+public class Algorithm {
 
     // Function to sort array using Bucket Sort
     public static void bucketSort(float[] arr, int n) {

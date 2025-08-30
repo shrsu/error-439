@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class KosarajusAlgorithm {
+public class Algorithm {
 
     // Step 1: Standard DFS to fill stack by finish time
     private void dfsFillOrder(int node, Map<Integer, List<Integer>> adjList, Set<Integer> visited,

@@ -1,4 +1,4 @@
-public class BinarySearch {
+public class Algorithm {
 
     // Function to perform binary search
     public static int binarySearch(int[] arr, int target) {

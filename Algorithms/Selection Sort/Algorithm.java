@@ -1,4 +1,4 @@
-public class SelectionSort {
+public class Algorithm {
 
     public static void selectionSort(int[] arr) {
         int n = arr.length;

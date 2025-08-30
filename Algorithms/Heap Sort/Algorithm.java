@@ -1,4 +1,4 @@
-public class HeapSort {
+public class Algorithm {
 
     // Main function to perform heap sort
     public static void heapSort(int[] arr) {

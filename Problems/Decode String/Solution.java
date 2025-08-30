@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class DecodeString {
+public class Solution {
     public static String decodeString(String s) {
         Stack<Integer> countStack = new Stack<>(); // stack to store repeat counts
         Stack<StringBuilder> stringStack = new Stack<>(); // stack to store previous strings

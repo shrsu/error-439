@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DepthFirstSearch {
+public class Algorithm {
     private void dfsHelper(int node, Map<Integer, List<Integer>> adjList, Set<Integer> visited) {
         // Mark current node as visited
         visited.add(node);

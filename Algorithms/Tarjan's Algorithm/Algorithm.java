@@ -1,13 +1,13 @@
 import java.util.*;
 
-public class TarjansAlgorithm {
+public class Algorithm {
     private int time = 0; // global timer for discovery time
     private Map<Integer, List<Integer>> adjList;
     private int[] disc, low; // discovery and low-link arrays
     private boolean[] inStack;
     private Stack<Integer> stack;
 
-    public TarjansAlgorithm(Map<Integer, List<Integer>> adjList, int n) {
+    public Algorithm(Map<Integer, List<Integer>> adjList, int n) {
         this.adjList = adjList;
         disc = new int[n];
         low = new int[n];

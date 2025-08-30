@@ -1,4 +1,4 @@
-public class TimSort {
+public class Algorithm {
 
     // Run size (commonly between 32–64 in real TimSort)
     private static final int RUN = 32;

@@ -1,4 +1,4 @@
-public class CountingSort {
+public class Algorithm {
 
     // Counting Sort function
     public static void countingSort(int[] arr) {

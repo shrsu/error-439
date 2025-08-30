@@ -1,4 +1,4 @@
-public class QuickSort {
+public class Algorithm {
 
     // Function to perform quicksort
     public static void quickSort(int[] arr, int low, int high) {
