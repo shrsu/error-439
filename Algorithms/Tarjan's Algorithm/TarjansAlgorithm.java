@@ -1,54 +1,59 @@
 import java.util.*;
 
 public class TarjansAlgorithm {
-    public static int count = 0;
+    private int time = 0; // global timer for discovery time
+    private Map<Integer, List<Integer>> adjList;
+    private int[] disc, low; // discovery and low-link arrays
+    private boolean[] inStack;
+    private Stack<Integer> stack;
 
-    public static void dfs(int v, int[] disc, int[] min, int[] parent,
-            ArrayList<ArrayList<Integer>> ans, ArrayList<ArrayList<Integer>> adj) {
-        disc[v] = min[v] = count++;
+    public TarjansAlgorithm(Map<Integer, List<Integer>> adjList, int n) {
+        this.adjList = adjList;
+        disc = new int[n];
+        low = new int[n];
+        inStack = new boolean[n];
+        stack = new Stack<>();
 
-        for (int neighbour : adj.get(v)) {
-            if (disc[neighbour] == -1) {
-                parent[neighbour] = v;
-                dfs(neighbour, disc, min, parent, ans, adj);
-                min[v] = Math.min(min[v], min[neighbour]);
+        Arrays.fill(disc, -1); // -1 means unvisited
+        Arrays.fill(low, -1);
 
-                if (disc[v] < min[neighbour]) {
-                    ArrayList<Integer> bridge = new ArrayList<>();
-                    bridge.add(Math.min(v, neighbour));
-                    bridge.add(Math.max(v, neighbour));
-                    ans.add(bridge);
-                }
-            } else if (neighbour != parent[v]) {
-                min[v] = Math.min(min[v], disc[neighbour]);
+        // Run DFS for each node (handle disconnected graphs too)
+        for (int i = 0; i < n; i++) {
+            if (disc[i] == -1) {
+                dfs(i);
             }
         }
     }
 
-    public static ArrayList<ArrayList<Integer>> criticalConnections(int v, ArrayList<ArrayList<Integer>> adj) {
-        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+    private void dfs(int u) {
+        disc[u] = low[u] = time++;
+        stack.push(u);
+        inStack[u] = true;
 
-        int[] disc = new int[v];
-        int[] min = new int[v];
-        int[] parent = new int[v];
-
-        Arrays.fill(disc, -1);
-        Arrays.fill(min, -1);
-        Arrays.fill(parent, -1);
-
-        for (int i = 0; i < v; i++) {
-            if (disc[i] == -1) {
-                dfs(i, disc, min, parent, ans, adj);
+        // Explore neighbors
+        for (int v : adjList.getOrDefault(u, new ArrayList<>())) {
+            if (disc[v] == -1) {
+                // Tree edge
+                dfs(v);
+                low[u] = Math.min(low[u], low[v]);
+            } else if (inStack[v]) {
+                // Back edge
+                low[u] = Math.min(low[u], disc[v]);
             }
         }
 
-        ans.sort((a, b) -> {
-            if (!a.get(0).equals(b.get(0)))
-                return a.get(0) - b.get(0);
-            return a.get(1) - b.get(1);
-        });
-
-        return ans;
+        // If u is head node of SCC
+        if (low[u] == disc[u]) {
+            System.out.print("SCC: ");
+            while (true) {
+                int v = stack.pop();
+                inStack[v] = false;
+                System.out.print(v + " ");
+                if (v == u)
+                    break;
+            }
+            System.out.println();
+        }
     }
 
 }
