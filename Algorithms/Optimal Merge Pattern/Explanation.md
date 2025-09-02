@@ -1,5 +1,3 @@
-here you go, bro — **background**, **greedy steps**, and a **clean Java impl** 👇
-
 # Optimal Merge Pattern (OMP)
 
 ## Background (what/why)
